@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libjwt-1.8.0: JWT Algorithm Functions</title>
+<title>libjwt-1.9.0: JWT Algorithm Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">libjwt-1.8.0
+   <div id="projectname">libjwt-1.9.0
    </div>
   </td>
  </tr>
@@ -76,11 +76,45 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5c5bece149deeb9546bf155646cf9797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jwt_8h.html#af798055c91128486537a739cfa20f1fb">jwt_alg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__jwt__alg.html#ga5c5bece149deeb9546bf155646cf9797">jwt_get_alg</a> (<a class="el" href="jwt_8h.html#abf0acfb990d245214216af589c1d0947">jwt_t</a> *jwt)</td></tr>
 <tr class="memdesc:ga5c5bece149deeb9546bf155646cf9797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the jwt_alg_t set for this JWT object.  <a href="#ga5c5bece149deeb9546bf155646cf9797">More...</a><br /></td></tr>
 <tr class="separator:ga5c5bece149deeb9546bf155646cf9797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga710960df9fb6e8cdc2276763c8a3c650"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__jwt__alg.html#ga710960df9fb6e8cdc2276763c8a3c650">jwt_alg_str</a> (<a class="el" href="jwt_8h.html#af798055c91128486537a739cfa20f1fb">jwt_alg_t</a> alg)</td></tr>
+<tr class="memdesc:ga710960df9fb6e8cdc2276763c8a3c650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert alg type to it's string representation.  <a href="#ga710960df9fb6e8cdc2276763c8a3c650">More...</a><br /></td></tr>
+<tr class="separator:ga710960df9fb6e8cdc2276763c8a3c650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf15787af42ab0fc567a0a1fc5ef3edc6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jwt_8h.html#af798055c91128486537a739cfa20f1fb">jwt_alg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__jwt__alg.html#gaf15787af42ab0fc567a0a1fc5ef3edc6">jwt_str_alg</a> (const char *alg)</td></tr>
+<tr class="memdesc:gaf15787af42ab0fc567a0a1fc5ef3edc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert alg string to type.  <a href="#gaf15787af42ab0fc567a0a1fc5ef3edc6">More...</a><br /></td></tr>
+<tr class="separator:gaf15787af42ab0fc567a0a1fc5ef3edc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Set and check algorithms and algorithm specific values. </p>
 <p>When working with functions that require a key, the underlying library takes care to scrub memory when the key is no longer used (e.g. when calling <a class="el" href="group__jwt__new.html#gafd51b076050815be44081439d1cb33fc" title="Free a JWT object and any other resources it is using. ">jwt_free()</a> or when changing the algorithm, the old key, if it exists, is scrubbed). </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga710960df9fb6e8cdc2276763c8a3c650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga710960df9fb6e8cdc2276763c8a3c650">&#9670;&nbsp;</a></span>jwt_alg_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* jwt_alg_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jwt_8h.html#af798055c91128486537a739cfa20f1fb">jwt_alg_t</a>&#160;</td>
+          <td class="paramname"><em>alg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert alg type to it's string representation. </p>
+<p>Returns a string that matches the alg type provided.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>A valid jwt_alg_t specifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a string (e.g. "RS256") matching the alg or NULL for invalid alg. </dd></dl>
+
+</div>
+</div>
 <a id="ga5c5bece149deeb9546bf155646cf9797"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga5c5bece149deeb9546bf155646cf9797">&#9670;&nbsp;</a></span>jwt_get_alg()</h2>
 
@@ -162,12 +196,41 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="gaf15787af42ab0fc567a0a1fc5ef3edc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf15787af42ab0fc567a0a1fc5ef3edc6">&#9670;&nbsp;</a></span>jwt_str_alg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jwt_8h.html#af798055c91128486537a739cfa20f1fb">jwt_alg_t</a> jwt_str_alg </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>alg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert alg string to type. </p>
+<p>Returns an alg type based on the string representation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>A valid string algorithm type (e.g. "RS256"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns an alg type matching the string or JWT_ALG_INVAL if no matches were found.</dd></dl>
+<p>Note, this only works for algorithms that LibJWT supports or knows about. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Nov 30 2017 18:44:05 for libjwt-1.8.0 by
+    <li class="footer">Generated on Tue Jun 26 2018 15:18:06 for libjwt-1.9.0 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>
